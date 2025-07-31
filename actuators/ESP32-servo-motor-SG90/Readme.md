@@ -23,21 +23,20 @@ Once you connected the servo motor to your ESP32 microcontroller, you can plug i
 
 ### Preparations
 
-- open VScode and create a new project in platform I/O (as usual)
-- click on the PIO icon (alien head), then click on "libraries"
-- search for the "servo ESP32" library `important: Version 1.0.3` by Jaroslav Paral and add it to your project
-- check the example code --> this is a port of the original arduino servo library, it is very easy to use! Be aware: all other versions apart from 1.0.3 are buggy.
+- open the Arduino IDE, create a new project and choose the ESP32 Dev Kit Board
+- click on "tools", then click on "manage libraries"
+- search for the "servo ESP32" library
+- check the example code --> this is a port of the original arduino servo library, and it's very easy to use!
 
 ### The Code
 
-- click on "src" and your main.cpp file
 - copy and paste the code from the "ESP32-servo-basic" folder of this repository
 - compile and then upload the code to your ESP32 board
 - Hurray: if everything went fine, your servo should be turning from one end to the other and back!
 
 Step by Step:
 
-`#include <Servo.h>` <br>
+`#include <ESP32Servo.h>` <br>
 --> includes the servo library we just added to our project
 
 `#define SERVO_PIN 26`<br>
@@ -55,6 +54,6 @@ Step by Step:
 
 # More Information
 
-- [servo tutorial on espio](https://esp32io.com/tutorials/esp32-servo-motor)
+- [AI spoken but o.k. tutorial..](https://www.youtube.com/watch?v=EMPaeDU4pdk)
 - [SG90 datasheet](https://www.friendlywire.com/projects/ne555-servo-safe/SG90-datasheet.pdf)
-- [video tutorial SG90 / ESP32 using another library](https://www.youtube.com/watch?v=dJAlkrXbfbQ)
+- [servo tutorial in depth and behind the scenes](https://www.youtube.com/watch?v=7A_2UcvgcF0)
