@@ -1,4 +1,4 @@
-# The Plant Plant
+# Sensing the Campus
 
 This repo is dedicated to the seminar "Sensing the Campus" at Bauhaus-University Weimar, WS 2025/26.
 
