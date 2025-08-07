@@ -1,5 +1,3 @@
-#include <Arduino.h>
-
 // assign the constant varibale LED_PIN to GPIO 2 (onboard led)
 #define LED_PIN 2
 
