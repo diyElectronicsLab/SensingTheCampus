@@ -6,12 +6,12 @@ The ESP32 is a microcontroller, and therefore it is generally similar to - for e
 
 ### Whats so cool about ESP32:
 
-- the ESP32 has WIFI and Bluetooth on board
-- the ESP32 runs on 3.3V, the Arduino Uno runs entirely on 5V. This is very important, because you can easily fry the ESP32 when applying too much voltage (for example 5V) to its pins. That can happen if you use your Arduino sensors with 5V logic directly on the ESP pins.
-- depending on the version, the ESP32 has more GPIO pins than the Arduino Uno, although not all of them can be used for general input/output purposes.
-- the ESP32 is faster and has more memory. On top of that: it is cheaper than the Arduino.
-- cool: the ESP32 can be programmed using the Arduino programming language.
-- much more that goes to deep for now..
+- the ESP32 has **WIFI** and **Bluetooth** on board
+- the ESP32 **runs on 3.3V**, the Arduino Uno runs entirely on 5V. This is very important, because **you can easily fry the ESP32** when applying too much voltage (for example 5V) to its pins. That can happen if you use your Arduino sensors with 5V logic directly on the ESP pins.
+- depending on the version, the ESP32 has **more GPIO pins** than the Arduino Uno, although not all of them can be used for general input/output purposes.
+- the ESP32 is **faster** and has **more memory**. On top of that: it is **cheaper** than the Arduino.
+- cool: the ESP32 can be programmed using the Arduino programming language and the Arduino IDE.
+- + much more that goes to deep for now..
 
 *Please Note:* 
 - *always double check the output voltages of your devices (sensors, ...) before connecting them to the ESP32 directly.*
@@ -19,11 +19,11 @@ The ESP32 is a microcontroller, and therefore it is generally similar to - for e
 - *some of the analog GPIO pins can not be used when Wifi is turned on.*
 
 ### Some downsides of the ESP32:
-- longer compile and upload times
+- longer compile and upload times .. :-(
 - a little bit less documentation online
-- most but not all the Arduino libraries available
-- incompatibilities with some sensor modules due to 3.3V logic; additional parts needed (voltage regulator to 3.3V or voltage divider).
-- most ESP Dev Kits are too large for a single breadboard.
+- most - but not all - the Arduino libraries available
+- **incompatibilities with some sensor modules due to 3.3V logic**; maybe additional parts needed (voltage regulator to 3.3V or voltage divider).
+- most ESP Dev Kits are too large for one single breadboard.
 - our ESP fits on a breadboard, however and for that reason, the pin labels are in the bottom..
 
 # Pin Configurations
@@ -51,20 +51,13 @@ The first thing we want to do are a basic tests that shows us if our computer ca
 Our first "Hello World" program will let the ESP32 blink in a certain sequence. We can decide how long the LED will be turned on and off.
 
 ### Preparations
-- open a new window in VScode and click on the alien head icon to open the Platform I/O extension
-- create a new project (toolbar on the left, scroll down if you need to)
-- enter a name and choose the board: "Espressif ESP32 Dev Module"
-- choose a location for the project and click finish.
-- go to the "src" folder in the side bar and click on "main.cpp" (this is our main c++ file that will run on the ESP32)
-- copy the code inside the folder "ESP32-Blink" from the file "main.cpp" into your own "main.cpp" file.
+- open a new window in the Arduino IDE
+- (only at the first encounter) install the ESP32 boards by espressif: tools > Board: > Boards Manager > search "esp32" > install esp32 by espressif
+- choose your USB port, search for the board name: "ESP32 Dev Module" and choose that as your board
+- copy the code inside the folder "ESP32-Blink" from the file "blink.ino" and replace the starter code your IDE window with it.
 
 ### The Code
 You can find the code needed in the ESP32-Blink folder of this repository. What the code is doing:
-
-`
-#include <Arduino.h>
-`
-- include the Arduino library to allow us writing Arduino style code in main.c++
 
 `
 #define LED_PIN 2
@@ -97,11 +90,11 @@ void loop()
 
 Now we are ready to compile / "Build" (ckeck if our code fits the rules of Arduino and c/c++) and upload the code to our ESP32!
 
-- go to your main.cpp file and click on the little hook symbol in the upper right corner. Your code will be compiled: it is checked for errors and converted to machine code that the ESP32 can understand. We will not see this machine code - that`s ok because we would not really be able to read it.
-- click on the little arrow next to the compile symbol and click on "upload" in the dropdown. Your Code will be uploaded to the ESP32 and it should start to blink! 
+- click on the hook in the top left and wait for the program to compile.
+- click on the arrow next to the hook and click it. Your Code will be uploaded to the ESP32 and it should start to blink! 
 
 *Important Note:
-If you have a Windows machine, you should check if your ESP32 will show up in the COM port list inside of Platform I/O > devices. If not, you need to install a driver for the USB chip.*
+If you have a Windows machine, you should check if your ESP32 will show up in the COM port list at: tools > port. If not, you need to install a driver for the USB chip.*
 - [Visit this website](https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/) and follow the tutorial
 - [direct link to the driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads), choose "CP210x Windows Drivers"
 <br><br>
