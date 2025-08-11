@@ -4,7 +4,7 @@ This repo is dedicated to the seminar "Sensing the Campus" at Bauhaus-University
 
 It contains information around the technical aspects of the seminar, namely regarding DIY electronics, DIY sensor technologies, microcontrollers and programming.
 
-[Sensing the Campus - Media Wiki](https://www.uni-weimar.de/kunst-und-gestaltung/wiki/GMU:Sensing_the_Campus)
+[Sensing the Campus - Media Wiki](https://www.uni-weimar.de/kunst-und-gestaltung/wiki/GMU:Sensing-the-campus)
 
 
 ## Preparations
