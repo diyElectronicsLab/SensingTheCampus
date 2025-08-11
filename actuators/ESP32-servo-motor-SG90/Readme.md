@@ -4,7 +4,7 @@ Regular DC motors spin endlessly without knowing how far they went. A servo moto
 
 In turn, this means that we can tell the motor exactly how far it should spin and when (or where) it should stop. In this tutorial, we are focusing on the SG90 miniature servo motor that is low-cost, easy to use and therefore often found in DIY projects. This particular servo motor is a positional model. Unlike a continuesly spinning motor, it is able to spin between 0 and 180 degrees and hold any location in between.
 
-![servo motor](https://www.brainpad.com/wp-content/uploads/2021/07/servos-1.gif)
+![servo motor](https://gndtovcc.home.blog/wp-content/uploads/2020/04/giphy.gif?w=480)
 
 ## Connecting SG90 to ESP32
 
@@ -25,8 +25,8 @@ Once you connected the servo motor to your ESP32 microcontroller, you can plug i
 
 - open the Arduino IDE, create a new project and choose the ESP32 Dev Kit Board
 - click on "tools", then click on "manage libraries"
-- search for the "servo ESP32" library
-- check the example code --> this is a port of the original arduino servo library, and it's very easy to use!
+- search for the "SimpleServoESP32" library by NoeFly 
+- click on install
 
 ### The Code
 
@@ -36,7 +36,7 @@ Once you connected the servo motor to your ESP32 microcontroller, you can plug i
 
 Step by Step:
 
-`#include <ESP32Servo.h>` <br>
+`#include <Servo.h>` <br>
 --> includes the servo library we just added to our project
 
 `#define SERVO_PIN 26`<br>
