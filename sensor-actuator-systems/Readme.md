@@ -23,5 +23,34 @@ We will have to define a range of detection in which the servo motor should reac
 
 ## The Code
 
+We basically combine the code for servo and sensor. The only new things are the Arduino constrain(value, min, max) and map(value, from min, from max, to min, to max) functions.
 
+We first define two constant variables in which we store the minimum and maximum cm of our desired range.
+
+`#define MIN_CM 0` <br>
+`#define MAX_CM 30` 
+
+(You can choose your own range.)
+
+Then in `loop()`, we tell the program to not go beyond our MAX_CM value, when saving the meaasured distance in our `distance` variable:
+
+  `float constrainedDistance = constrain(distance, MIN_CM, MAX_CM);`
+
+The `constrain()` function makes sure, that a value never exceeds the given min and max values.
+
+With the `map()` function, we project the constrained value on the action range of our servo motor (0-180 degree). As we want it to be at 0 degree, when we are over or at 30 cm, and at 180 degree when we are at 0 cm, we have to flip 0 and 180.
+
+The conversion goes like: <br>
+map( our_value, from minimum, from maximum, to minimum, to maximum)
+
+  `float mappedDistance = map(constrainedDistance, MIN_CM, MAX_CM, 180, 0);`
+
+
+## Links
+
+constrain() function <br>
+https://docs.arduino.cc/language-reference/en/functions/math/constrain/
+
+map() function<br>
+https://docs.arduino.cc/language-reference/en/functions/math/map/
 
