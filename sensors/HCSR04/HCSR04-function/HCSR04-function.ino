@@ -17,7 +17,7 @@ void setup() {
 // === loop ===
 void loop() {
   // function call: return value saved in variable
-  int distance = measureCM();
+  float distance = measureCM();
   Serial.println(distance);
 }
 
