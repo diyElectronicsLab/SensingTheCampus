@@ -1,9 +1,12 @@
-#include <SensingTheCampusLib.h>
+#include <WiFi.h>
+#include "esp_wpa2.h"
 #include "time.h"
 
-// Standard wifi connection
-String wifiSSID = "GRANULAT";
-String wifiPassword = "11111987";
+// eduora connection
+const char* eduRoamUser = "your-bauhaus-username@uni-weimar.de";
+const char* eduRoamPassword = "your-bauhaus-username-password";
+const char* ssid = "eduroam";
+const char* EAP_ANONYMOUS_IDENTITY = eduRoamUser;
 
 // NTP-Server and time zone (example: Germany)
 const char* ntpServer = "pool.ntp.org";
@@ -13,7 +16,18 @@ const int daylightOffset_sec = 3600;  // summer time
 void setup() {
   Serial.begin(115200);
 
-  connectToWiFi(wifiSSID, wifiPassword);
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_STA);
+
+  WiFi.begin(ssid, WPA2_AUTH_PEAP, EAP_ANONYMOUS_IDENTITY, userName, pwd);
+
+  Serial.print("Connecting to eduroam");
+  while (WiFi.status() != WL_CONNECTED) {  // if not yet connected, try again and print a "."
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi connected. IP: ");
+  Serial.println(WiFi.localIP());  // show the IP of device in serial monitor
 
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
 }
@@ -28,5 +42,5 @@ void loop() {
   } else {
     Serial.println("Failed to obtain time");
   }
-  delay(1000); // wait a second
+  delay(1000);  // wait a second
 }
