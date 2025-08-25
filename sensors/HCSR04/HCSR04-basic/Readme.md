@@ -1,2 +1,0 @@
-https://esp32io.com/tutorials/esp32-ultrasonic-sensor
-https://randomnerdtutorials.com/esp32-hc-sr04-ultrasonic-arduino/
