@@ -42,7 +42,7 @@ Distance (cm) = Pulse Duration (µs) * speed of sound (0.034) / 2
 - Resistor 10k (or 680 ohm) between Echo pin and ESP32 input pin
 - Resistor 20k (or 1k) between ESP32 input pin and GND
 
-
+⚠️ Connections:
 - !! USE TRIG PIN 22
 - !! USE ECHO PIN 23
 - !! Resistor between GND and echo pin 23 = 100 k = yellow stripe
