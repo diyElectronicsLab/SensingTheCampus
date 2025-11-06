@@ -43,6 +43,11 @@ Distance (cm) = Pulse Duration (µs) * speed of sound (0.034) / 2
 - Resistor 20k (or 1k) between ESP32 input pin and GND
 
 
+!! USE TRIG PIN 22
+!! USE ECHO PIN 23
+!! Resistor between GND and echo pin 23 = 100 k = yellow stripe
+!! Resistor between Echo (sensor) and echo Pin 23 = 10 k = orange stripe
+
 ![HCSR-04 voltage divider](https://docs.toit.io/static/hw_ff_ultra-divider-6d61f84710362eacf369e0098c53701f.png)
 
 ## Links
