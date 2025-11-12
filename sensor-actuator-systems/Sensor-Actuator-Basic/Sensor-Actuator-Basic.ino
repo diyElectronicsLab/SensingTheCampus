@@ -5,8 +5,8 @@
 Servo myServo;
 
 //  Sensor HCSR-04
-#define TRIG_PIN 39
-#define ECHO_PIN 36
+#define TRIG_PIN 22
+#define ECHO_PIN 23
 
 #define SOUND_SPEED 0.034
 #define MAX_CM 30  // maximum (measurement range)
