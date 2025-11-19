@@ -137,3 +137,101 @@ String (text): `mqttPayloadToString(payload, length);`
 int (whole numbers): `mqttPayloadToInt(payload, length);` 
 
 float (decimal numbers): `mqttPayloadToFloat(payload, length);`
+
+
+## 🔎  List of all Functions
+
+### 📶 WiFi & Eduroam
+
+`void connectToEduRoam(String user, String pwd);`  
+
+Connects the ESP32 to the eduroam network using WPA2-Enterprise.
+
+- user = "your-bauhaus-user-name@uni-weimar.de" 
+- pwd = "your-bauhaus-user-password"
+
+___
+
+`void connectToWiFi(String ssid, String password);` 
+
+Connects the ESP32 to a standard WiFi network. 
+
+- ssid = "your-wifi-ssid"  
+- pwd = "your-wifi-password"
+
+### ☁️ MQTT – Connection & Management
+
+`void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String student_name); ` 
+
+Connects the ESP32 to the HiveMQ broker.
+
+- mqtt_server = "provided-server"
+- mqtt_user = "provided-user-name"
+- mqtt_pwd = "provided-pwd"
+- student_name = "your-name"
+
+___
+
+`void checkMQTTConnection(String mqtt_server, String mqtt_user, String mqtt_pwd, String student_name);` 
+
+Checks if the MQTT connection is still alive and reconnects if necessary.
+
+- mqtt_server = "provided-server"
+- mqtt_user = "provided-user-name"
+- mqtt_pwd = "provided-pwd"
+- student_name = "your-name"
+
+___
+
+`void sendMessageMQTT(String msg, String topic); ` 
+`void sendMessageMQTT(int val, String topic);  `
+`void sendMessageMQTT(float val, String topic);  `
+
+Publishes a String, integer, or float value to the given topic.
+
+___
+
+`void loopMQTT();`
+
+Processes incoming MQTT packets. Must be called in every loop() when planning to receive messages.
+
+### ↔️ MQTT – Publish & Subscribe
+
+`void subscribeTopicMQTT(String topic);`
+
+Subscribes to a given MQTT topic.
+
+- topic = "your-topic-name"
+
+___
+
+`void setMQTTCallback(void (*callback)(char* topic, byte* payload, unsigned int length));`  
+
+Defines what happens when a new MQTT message is received.
+
+- takes a function as argument
+
+example function:
+>void receiveProcedure(char *topic, byte *payload, unsigned int length) 
+
+example usage: 
+> setMQTTCallback(receiveProcedure);
+
+
+### 💬 MQTT – Payload Conversion
+
+`String mqttPayloadToString(const byte* payload, unsigned int length);  `
+
+Converts incoming payload to a String.
+___
+
+`int mqttPayloadToInt(const byte* payload, unsigned int length); ` 
+
+Converts incoming payload to an integer.
+___
+
+`float mqttPayloadToFloat(const byte* payload, unsigned int length);  `
+
+Converts incoming payload to a float.
+
+
