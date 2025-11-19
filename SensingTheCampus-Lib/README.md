@@ -145,7 +145,8 @@ float (decimal numbers): `mqttPayloadToFloat(payload, length);`
 
 `void connectToEduRoam(String user, String pwd);`  
 
-Connects the ESP32 to the eduroam network using WPA2-Enterprise.
+Connects the ESP32 to the eduroam 
+network using WPA2-Enterprise.
 
 - user = "your-bauhaus-user-name@uni-weimar.de" 
 - pwd = "your-bauhaus-user-password"
