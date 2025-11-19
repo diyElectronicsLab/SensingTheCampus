@@ -10,7 +10,7 @@ String eduRoamPassword = "your-bauhaus-username-password";
 String studentName = "your-name";
 String hiveMQUserName = "hiveMQ-user-name";
 String hiveMQPassword = "hiveMQ-password";
-String hiveMQServerAddress = "a2b8723f7b7643fb823261290542f141.s1.eu.hivemq.cloud";
+String hiveMQServerAddress = "5f2326c3de2044798fd58379a751ce5c.s1.eu.hivemq.cloud";
 
 void setup()
 {
