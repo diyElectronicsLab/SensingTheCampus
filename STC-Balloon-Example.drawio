@@ -41,13 +41,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-8" value="ESP 32" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="660" y="460" width="90" height="60" as="geometry" />
+          <mxGeometry x="660" y="490" width="90" height="60" as="geometry" />
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-11" value="Air Pump" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="810" y="460" width="80" height="60" as="geometry" />
+          <mxGeometry x="810" y="490" width="80" height="60" as="geometry" />
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-13" value="Air Balloon" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="810" y="530" width="80" height="60" as="geometry" />
+          <mxGeometry x="810" y="560" width="80" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
