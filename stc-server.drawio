@@ -44,10 +44,10 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="okHaDHX5nHtZ3cpWqgZS-3">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="710" y="350" as="targetPoint" />
+            <mxPoint x="730" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-6" value="Reverse Proxy&lt;div&gt;apache2.service&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-5">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-6" value="Reverse Proxy&lt;div&gt;apache2.service&lt;/div&gt;&lt;div&gt;internal 8000 &amp;gt; /api/&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-5">
           <mxGeometry x="-0.2154" y="-3" relative="1" as="geometry">
             <mxPoint x="9" y="-3" as="offset" />
           </mxGeometry>
@@ -68,12 +68,12 @@
             <mxPoint x="570" y="140" as="sourcePoint" />
             <mxPoint x="620" y="450" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="710" y="140" />
-              <mxPoint x="710" y="540" />
+              <mxPoint x="730" y="140" />
+              <mxPoint x="730" y="540" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-8" value="fetch history:&lt;br&gt;/api/messages" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-4">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-8" value="fetch history:&lt;br&gt;/api/messages?limit=5,topic=..." style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-4">
           <mxGeometry x="-0.25" y="-3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -99,6 +99,13 @@
         <mxCell id="2vk5tuavqSbZOF2RI16G-16" value="Subscribe topics&lt;div&gt;stc-XXX/#&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-13">
           <mxGeometry x="-0.0067" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2vk5tuavqSbZOF2RI16G-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2vk5tuavqSbZOF2RI16G-12" target="2vk5tuavqSbZOF2RI16G-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="659" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-12" value="Python MQTT&lt;div&gt;Subscription&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
