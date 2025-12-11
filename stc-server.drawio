@@ -18,7 +18,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-7" value="Internal Port&amp;nbsp;port 8000&lt;br&gt;curl http://localhost:8000/messages?limit=5&lt;br&gt;api_backend.service" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-3">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-7" value="Internal Port&amp;nbsp;port 8000&lt;br&gt;curl http://localhost:8000/messages?limit=5&lt;br&gt;api_backend.service&lt;div&gt;systemd&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-3">
           <mxGeometry x="-0.0806" y="2" relative="1" as="geometry">
             <mxPoint y="1" as="offset" />
           </mxGeometry>
@@ -26,7 +26,7 @@
         <mxCell id="2vk5tuavqSbZOF2RI16G-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="192CLF5Xyg2s4v-FJuph-5" target="2vk5tuavqSbZOF2RI16G-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-15" value="&lt;div&gt;Subscribe&lt;/div&gt;&lt;div&gt;subscribe_mqtt.py&lt;/div&gt;&lt;div&gt;mqtt_subscriber.service&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-14">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-15" value="&lt;div&gt;Subscribe&lt;/div&gt;&lt;div&gt;subscribe_mqtt.py&lt;/div&gt;&lt;div&gt;mqtt_subscriber.service&lt;/div&gt;&lt;div&gt;systemd&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-14">
           <mxGeometry x="-0.1368" y="2" relative="1" as="geometry">
             <mxPoint x="-8" y="-3" as="offset" />
           </mxGeometry>
@@ -37,7 +37,7 @@
         <mxCell id="okHaDHX5nHtZ3cpWqgZS-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="okHaDHX5nHtZ3cpWqgZS-3" target="okHaDHX5nHtZ3cpWqgZS-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-9" value="Host&lt;div&gt;&amp;nbsp;/var/www/stc-frontend&lt;/div&gt;&lt;div&gt;@ http://141.54.79.5&lt;br&gt;apache2.service&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="okHaDHX5nHtZ3cpWqgZS-8" vertex="1" connectable="0">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-9" value="&lt;div&gt;&amp;nbsp;/var/www/stc-frontend&lt;/div&gt;&lt;div&gt;/etc/apache2/sites-available/stc-frontend.conf&lt;/div&gt;&lt;div&gt;@ http://141.54.79.5&lt;br&gt;apache2.service&lt;/div&gt;&lt;div&gt;systemd&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="okHaDHX5nHtZ3cpWqgZS-8" vertex="1" connectable="0">
           <mxGeometry x="-0.2" y="-3" relative="1" as="geometry">
             <mxPoint x="-3" y="-9" as="offset" />
           </mxGeometry>
@@ -47,7 +47,7 @@
             <mxPoint x="730" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-6" value="Reverse Proxy&lt;div&gt;apache2.service&lt;/div&gt;&lt;div&gt;internal 8000 &amp;gt; /api/&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-5">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-6" value="Reverse Proxy&lt;div&gt;apache2.service&lt;/div&gt;&lt;div&gt;systemd&lt;/div&gt;&lt;div&gt;internal 8000 &amp;gt; /api/&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-5">
           <mxGeometry x="-0.2154" y="-3" relative="1" as="geometry">
             <mxPoint x="9" y="-3" as="offset" />
           </mxGeometry>
@@ -87,10 +87,15 @@
             <mxPoint x="520" y="629" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-2" value="Python Fast API&lt;div&gt;Data History&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-18" value="aiosqlite" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-10">
+          <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2vk5tuavqSbZOF2RI16G-2" value="Python Fast API&lt;div&gt;Data History&lt;/div&gt;&lt;div&gt;uvicorn&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="509" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-9" value="SQLite&amp;nbsp;&lt;div&gt;Data Base&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-9" value="SQLite 3&lt;div&gt;Data Base&lt;/div&gt;&lt;div&gt;mqtt_data.db&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="629" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2vk5tuavqSbZOF2RI16G-12" target="192CLF5Xyg2s4v-FJuph-1">
