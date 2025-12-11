@@ -5,39 +5,39 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="192CLF5Xyg2s4v-FJuph-1" value="Hive MQ" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="120" y="110" width="100" height="60" as="geometry" />
+          <mxGeometry x="20" y="110" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="192CLF5Xyg2s4v-FJuph-5" target="192CLF5Xyg2s4v-FJuph-1">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="192CLF5Xyg2s4v-FJuph-5" target="192CLF5Xyg2s4v-FJuph-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-2" value="Subscribe&lt;br&gt;subscribe_mqtt.py&lt;br&gt;mqtt_subscriber.service" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="okHaDHX5nHtZ3cpWqgZS-1">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-2" value="Subscribe&lt;br&gt;subscribe_mqtt.py&lt;br&gt;mqtt_subscriber.service" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="okHaDHX5nHtZ3cpWqgZS-1" vertex="1" connectable="0">
           <mxGeometry x="-0.4333" y="-4" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-21" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-5" value="Linux Server" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="310" y="240" width="80" height="80" as="geometry" />
+          <mxGeometry x="310" y="309" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="okHaDHX5nHtZ3cpWqgZS-3" target="okHaDHX5nHtZ3cpWqgZS-4">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="okHaDHX5nHtZ3cpWqgZS-3" target="okHaDHX5nHtZ3cpWqgZS-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-9" value="Host&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="okHaDHX5nHtZ3cpWqgZS-8">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-9" value="Host&lt;div&gt;&amp;nbsp;/var/www/stc-frontend&lt;/div&gt;&lt;div&gt;@ http://141.54.79.5&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="okHaDHX5nHtZ3cpWqgZS-8" vertex="1" connectable="0">
           <mxGeometry x="-0.2" y="-3" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-3" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-3" value="Apache Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="250" width="100" height="60" as="geometry" />
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-3" value="Apache Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="319" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="okHaDHX5nHtZ3cpWqgZS-4" target="192CLF5Xyg2s4v-FJuph-1">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="okHaDHX5nHtZ3cpWqgZS-4" target="192CLF5Xyg2s4v-FJuph-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-7" value="Subscribe&lt;br&gt;Websocket JS&lt;div&gt;Browser&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="okHaDHX5nHtZ3cpWqgZS-6">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-7" value="Subscribe&lt;br&gt;Websocket JS&lt;div&gt;Browser&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="okHaDHX5nHtZ3cpWqgZS-6" vertex="1" connectable="0">
           <mxGeometry x="0.136" y="-1" relative="1" as="geometry">
             <mxPoint x="22" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-4" value="Website (html, css, js)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-4" value="Website (html, css, js)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="470" y="110" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
