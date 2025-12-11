@@ -28,7 +28,7 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-15" value="&lt;div&gt;Subscribe&lt;/div&gt;&lt;div&gt;subscribe_mqtt.py&lt;/div&gt;&lt;div&gt;mqtt_subscriber.service&lt;/div&gt;&lt;div&gt;systemd&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-14">
           <mxGeometry x="-0.1368" y="2" relative="1" as="geometry">
-            <mxPoint x="-8" y="-3" as="offset" />
+            <mxPoint x="-7" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-5" value="Linux Server" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -49,10 +49,10 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-6" value="Reverse Proxy&lt;div&gt;apache2.service&lt;/div&gt;&lt;div&gt;systemd&lt;/div&gt;&lt;div&gt;internal 8000 &amp;gt; /api/&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-5">
           <mxGeometry x="-0.2154" y="-3" relative="1" as="geometry">
-            <mxPoint x="9" y="-3" as="offset" />
+            <mxPoint x="10" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okHaDHX5nHtZ3cpWqgZS-3" value="Apache Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="okHaDHX5nHtZ3cpWqgZS-3" value="Apache 2&amp;nbsp;&lt;div&gt;Web Server&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="470" y="319" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="okHaDHX5nHtZ3cpWqgZS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="okHaDHX5nHtZ3cpWqgZS-4" target="192CLF5Xyg2s4v-FJuph-1" edge="1">
@@ -89,7 +89,7 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-18" value="aiosqlite" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-10">
           <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint y="2" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-2" value="Python Fast API&lt;div&gt;Data History&lt;/div&gt;&lt;div&gt;uvicorn&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
