@@ -81,8 +81,14 @@
         <mxCell id="okHaDHX5nHtZ3cpWqgZS-4" value="Website (html, css, js)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="470" y="110" width="100" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="2vk5tuavqSbZOF2RI16G-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2vk5tuavqSbZOF2RI16G-2" target="2vk5tuavqSbZOF2RI16G-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-2" value="Fast API&lt;div&gt;Data History&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="450" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2vk5tuavqSbZOF2RI16G-9" value="SQLite&amp;nbsp;&lt;div&gt;Data Base&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="570" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
