@@ -108,7 +108,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="2vk5tuavqSbZOF2RI16G-12" value="Python MQTT&lt;div&gt;Subscription&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="2vk5tuavqSbZOF2RI16G-12" value="Python MQTT&lt;div&gt;Subscription&lt;/div&gt;&lt;div&gt;Paho MQTT&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="20" y="319" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
