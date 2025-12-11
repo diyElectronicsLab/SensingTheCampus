@@ -14,13 +14,13 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="420" y="349" />
-              <mxPoint x="420" y="500" />
+              <mxPoint x="420" y="540" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-7" value="Internal Port&amp;nbsp;port 8000&lt;br&gt;curl http://localhost:8000/messages?limit=5&lt;br&gt;api_backend.service" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-3">
           <mxGeometry x="-0.0806" y="2" relative="1" as="geometry">
-            <mxPoint y="-7" as="offset" />
+            <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="192CLF5Xyg2s4v-FJuph-5" target="2vk5tuavqSbZOF2RI16G-12">
@@ -28,7 +28,7 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-15" value="&lt;div&gt;Subscribe&lt;/div&gt;&lt;div&gt;subscribe_mqtt.py&lt;/div&gt;&lt;div&gt;mqtt_subscriber.service&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2vk5tuavqSbZOF2RI16G-14">
           <mxGeometry x="-0.1368" y="2" relative="1" as="geometry">
-            <mxPoint x="-8" as="offset" />
+            <mxPoint x="-8" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="192CLF5Xyg2s4v-FJuph-5" value="Linux Server" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -69,7 +69,7 @@
             <mxPoint x="620" y="450" as="targetPoint" />
             <Array as="points">
               <mxPoint x="710" y="140" />
-              <mxPoint x="710" y="500" />
+              <mxPoint x="710" y="540" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -83,15 +83,15 @@
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="520" y="530" as="sourcePoint" />
-            <mxPoint x="520" y="590" as="targetPoint" />
+            <mxPoint x="520" y="569" as="sourcePoint" />
+            <mxPoint x="520" y="629" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-2" value="Python Fast API&lt;div&gt;Data History&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="470" width="100" height="60" as="geometry" />
+          <mxGeometry x="470" y="509" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-9" value="SQLite&amp;nbsp;&lt;div&gt;Data Base&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="590" width="100" height="60" as="geometry" />
+          <mxGeometry x="470" y="629" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2vk5tuavqSbZOF2RI16G-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2vk5tuavqSbZOF2RI16G-12" target="192CLF5Xyg2s4v-FJuph-1">
           <mxGeometry relative="1" as="geometry" />
