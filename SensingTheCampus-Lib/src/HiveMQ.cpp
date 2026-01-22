@@ -6,7 +6,11 @@
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
 
+static bool firstConnect = true;
+static unsigned long lastAttempt = 0;
+
 static bool mqttInitialized = false;
+String subTopic = "";
 
 // === CONNECT ===
 void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String student_name)
@@ -29,22 +33,29 @@ void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String s
   }
 
   String clientId = "ESP32Client-" + student_name;
-  Serial.print("Verbinde zu HiveMQ Cloud mit Client ID: ");
+  Serial.print("Connecting to HiveMQ Cloud with Client ID: ");
   Serial.println(clientId);
 
-  while (!client.connected())
-  {
-    if (client.connect(clientId.c_str(), mqttUser, mqttPwd))
-    {
-      Serial.println("verbunden!");
+  if (!client.connected()) {
+      if (firstConnect || millis() - lastAttempt > 2000) {
+        Serial.println("attempting connection to MQTT...");
+        lastAttempt = millis();
+        if (client.connect(clientId.c_str(), mqttUser, mqttPwd))
+          {
+          Serial.println("connected!");
+          if (firstConnect) firstConnect = false;
+          // if there is already a subscription, renew it after reconnect
+          if (subTopic.length() > 0) {
+            client.subscribe(subTopic.c_str(), 0);
+          }
+        } else {
+          Serial.println ("MQTT connection failed. Trying again in 2 seconds.");
+          Serial.print ("rc=");
+          Serial.println(client.state());
+          client.disconnect();
+        }
     }
-    else
-    {
-      Serial.print("Fehler, rc=");
-      Serial.print(client.state());
-      Serial.println(" - retry in 5 Sekunden");
-      delay(5000);
-    }
+
   }
 }
 
@@ -60,6 +71,7 @@ void checkMQTTConnection(String mqtt_server, String mqtt_user, String mqtt_pwd, 
 // === SUBSCRIBE ====
 void subscribeTopicMQTT(String _topic)
 {
+  subTopic = _topic;
   client.subscribe(_topic.c_str(), 0);
 }
 
@@ -79,21 +91,21 @@ void loopMQTT()
 void sendMessageMQTT(String msg, String topic)
 {
   client.publish(topic.c_str(), msg.c_str());
-  Serial.println("Nachricht gesendet: " + msg);
+  Serial.println("Message sent: " + msg);
 }
 void sendMessageMQTT(int val, String topic)
 {
   char buf[16];
   sprintf(buf, "%d", val);
   sendMessageMQTT(buf, topic.c_str());
-  Serial.println(String("Nachricht gesendet: ") + buf);
+  Serial.println(String("Message sent: ") + buf);
 }
 void sendMessageMQTT(float val, String topic)
 {
   char buf[16];
   sprintf(buf, "%.2f", val);
   sendMessageMQTT(buf, topic.c_str());
-  Serial.println(String("Nachricht gesendet: ") + buf);
+  Serial.println(String("Message sent: ") + buf);
 }
 
 // === CONVERT PAYLOADS ===

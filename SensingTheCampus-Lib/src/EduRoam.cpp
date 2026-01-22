@@ -3,6 +3,8 @@
 #include "esp_wpa2.h"
 
 void connectToEduRoam(String userName, String pwd) {
+  if (WiFi.status() == WL_CONNECTED) return;
+  
   const char* ssid = "eduroam";
   String EAP_ANONYMOUS_IDENTITY = userName;
 
