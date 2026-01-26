@@ -80,7 +80,8 @@ void receiveProcedure(char *topic, byte *payload, unsigned int length)
 
   // read the message
   Serial.print("Payload: ");
-  intData = mqttPayloadToInt(payload, length);
+  // only for int values. check the other examples oif you are receiving float or string.
+  intData = mqttPayloadToInt(payload, length); 
 
   Serial.print("Payload (int): ");
   Serial.println(intData);
