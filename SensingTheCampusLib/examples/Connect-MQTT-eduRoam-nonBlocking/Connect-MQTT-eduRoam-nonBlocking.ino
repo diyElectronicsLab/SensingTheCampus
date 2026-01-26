@@ -1,7 +1,5 @@
 #include <SensingTheCampusLib.h>
 
-int count = 0;
-
 // eduroam wifi connection
 String eduRoamUser = "your-bauhaus-username@uni-weimar.de";
 String eduRoamPassword = "your-bauhaus-username-password";
@@ -14,8 +12,11 @@ String hiveMQServerAddress = "a2b8723f7b7643fb823261290542f141.s1.eu.hivemq.clou
 
 String myTopic = "stc/myTopic"; // use stc/... to allow mimi displaying your data on the website
 
-int intData = 0;
+int myData = 0;
 bool newData = false;
+
+int count = 0;
+
 
 void setup()
 {
@@ -31,7 +32,7 @@ void setup()
   connectMQTT(hiveMQServerAddress, hiveMQUserName, hiveMQPassword, studentName);
 
   // === RECEIVE MQTT MESSAGES ===
-  // void setMQTTCallback(void (*callback)(char* topic, byte* payload, unsigned int length));
+  // you only need this if you are receiving anything
   setMQTTCallback(receiveProcedure);
 
   //   void subscribeTopicMQTT(String _topic);
@@ -48,41 +49,50 @@ void loop()
   loopMQTT();
 
   // === SEND MESSAGE ===
-  // void sendMessageMQTT(String msg, String topic);
-  // void sendMessageMQTT(int val, String topic);
-  // void sendMessageMQTT(float val, String topic);
+  // sends the current counter value (int) every second
+  // you dont need this if you are only receiving.
   static unsigned long lastMsg = 0;
   if (millis() - lastMsg > 10000)
   {
     Serial.println("sending message..");
     lastMsg = millis();
 
-    String message = "Hello from ESP32 " + studentName + " #" + String(count);
+    String message = String(count);
     sendMessageMQTT(message, myTopic);
 
     count++;
   }
 
+  // === YOUR PROJECT LOGIC === 
+  // put the code for receiving and acting on the newly received data here
+  // make sure the code is non-blocking (no delay, no while loops) using the millis() function
   if (newData){
-    // do something with your data here, avoid blocking code like delay()
+    // print the newly received data
     Serial.print("new data in loop: ");
-    Serial.println(intData);
+    Serial.println(myData);
+
+    // reset new data flag
+    newData = false;
   }
 }
 
 // === RECEIVE MQTT ROUTINE ===
-// void (*callback)(char* topic, byte* payload, unsigned int length));
+// you only need this if you are receiving anything
+// no blocking code in this function! work with a flag for newData
 void receiveProcedure(char *topic, byte *payload, unsigned int length)
 {
   // read the topic
   Serial.print("Received message @ Topic: ");
   Serial.println(topic);
 
+  // set new data flag to true in order to execute the code in loop()
+  newData = true;
+
   // read the message
   Serial.print("Payload: ");
   // only for int values. check the other examples oif you are receiving float or string.
-  intData = mqttPayloadToInt(payload, length); 
+  myData = mqttPayloadToInt(payload, length); 
 
   Serial.print("Payload (int): ");
-  Serial.println(intData);
+  Serial.println(myData);
 }
