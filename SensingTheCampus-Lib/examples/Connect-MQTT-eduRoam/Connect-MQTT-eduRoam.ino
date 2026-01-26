@@ -7,10 +7,12 @@ String eduRoamUser = "your-bauhaus-username@uni-weimar.de";
 String eduRoamPassword = "your-bauhaus-username-password";
 
 // MQTT connection
-String studentName = "your-name";
+String studentName = "your-name"; // important: different student name for sender and receiver !!
 String hiveMQUserName = "hiveMQ-user-name";
 String hiveMQPassword = "hiveMQ-password";
-String hiveMQServerAddress = "5f2326c3de2044798fd58379a751ce5c.s1.eu.hivemq.cloud";
+String hiveMQServerAddress = "a2b8723f7b7643fb823261290542f141.s1.eu.hivemq.cloud";
+
+String myTopic = "stc/myTopic"; // use stc/... to allow mimi displaying your data on the website
 
 void setup()
 {
@@ -30,7 +32,7 @@ void setup()
   setMQTTCallback(receiveProcedure);
 
   //   void subscribeTopicMQTT(String _topic);
-  subscribeTopicMQTT("esp/testTopic");
+  subscribeTopicMQTT(myTopic);
 }
 
 void loop()
@@ -38,6 +40,7 @@ void loop()
   // === RECEIVE MQTT MESSAGES (loop) ===
   // 1) check if connection is still established
   // 2) check for new messages
+  connectToEduRoam(eduRoamUser, eduRoamPassword);
   connectMQTT(hiveMQServerAddress, hiveMQUserName, hiveMQPassword, studentName);
   loopMQTT();
 
@@ -52,7 +55,7 @@ void loop()
     lastMsg = millis();
 
     String message = "Hello from ESP32 " + studentName + " #" + String(count);
-    sendMessageMQTT(message, "esp/testTopic");
+    sendMessageMQTT(message, myTopic);
 
     count++;
   }

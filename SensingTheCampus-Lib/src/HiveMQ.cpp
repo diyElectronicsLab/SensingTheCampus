@@ -6,11 +6,14 @@
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
 
+// static: Die Variable gehört nur zu dieser Datei
+// Ihr Wert bleibt über die gesamte Laufzeit erhalten
+// Sie ist kein Stack-Objekt und keine globale API-Variable.
 static bool firstConnect = true;
 static unsigned long lastAttempt = 0;
 
 static bool mqttInitialized = false;
-String subTopic = "";
+static String subTopic = "";
 
 // === CONNECT ===
 void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String student_name)
@@ -55,7 +58,6 @@ void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String s
           client.disconnect();
         }
     }
-
   }
 }
 
