@@ -13,7 +13,7 @@ String hiveMQServerAddress = "a2b8723f7b7643fb823261290542f141.s1.eu.hivemq.clou
 String myTopic = "stc/myTopic"; // use stc/... to allow mimi displaying your data on the website
 
 int myData = 0;
-bool newData = false;
+volatile bool newData = false;
 
 int count = 0;
 
