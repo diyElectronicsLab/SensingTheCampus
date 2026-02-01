@@ -1,6 +1,7 @@
 #include "HiveMQ.h"
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
+#include <WiFi.h>
 
 // === create MQTT objects ===
 WiFiClientSecure espClient;
