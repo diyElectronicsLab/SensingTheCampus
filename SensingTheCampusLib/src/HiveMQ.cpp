@@ -19,6 +19,13 @@ static String subTopic = "";
 void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String student_name)
 {
 
+  // alte / kaputte Verbindung sauber beenden
+  if (WiFi.status() != WL_CONNECTED)
+  {
+    client.disconnect();
+    return;
+  }
+
   if (client.connected())
     return;
 
@@ -32,6 +39,10 @@ void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String s
     espClient.setCACert(root_ca);
     // MQTT Server & Port setzen
     client.setServer(mqttServer, mqtt_port);
+
+    // ping alle 90 Sekunden statt 15
+    client.setKeepAlive(90);
+
     mqttInitialized = true;
   }
 
@@ -39,24 +50,30 @@ void connectMQTT(String mqtt_server, String mqtt_user, String mqtt_pwd, String s
   Serial.print("Connecting to HiveMQ Cloud with Client ID: ");
   Serial.println(clientId);
 
-  if (!client.connected()) {
-      if (firstConnect || millis() - lastAttempt > 2000) {
-        Serial.println("attempting connection to MQTT...");
-        lastAttempt = millis();
-        if (client.connect(clientId.c_str(), mqttUser, mqttPwd))
-          {
-          Serial.println("connected!");
-          if (firstConnect) firstConnect = false;
-          // if there is already a subscription, renew it after reconnect
-          if (subTopic.length() > 0) {
-            client.subscribe(subTopic.c_str(), 0);
-          }
-        } else {
-          Serial.println ("MQTT connection failed. Trying again in 2 seconds.");
-          Serial.print ("rc=");
-          Serial.println(client.state());
-          client.disconnect();
+  if (!client.connected())
+  {
+    if (firstConnect || millis() - lastAttempt > 2000)
+    {
+      Serial.println("attempting connection to MQTT...");
+      lastAttempt = millis();
+      if (client.connect(clientId.c_str(), mqttUser, mqttPwd))
+      {
+        Serial.println("connected!");
+        if (firstConnect)
+          firstConnect = false;
+        // if there is already a subscription, renew it after reconnect
+        if (subTopic.length() > 0)
+        {
+          client.subscribe(subTopic.c_str(), 0);
         }
+      }
+      else
+      {
+        Serial.println("MQTT connection failed. Trying again in 2 seconds.");
+        Serial.print("rc=");
+        Serial.println(client.state());
+        client.disconnect();
+      }
     }
   }
 }
